@@ -11,28 +11,27 @@ inherit
 	EV_APPLICATION
 
 create
-	make_and_launch 
+	make_and_launch
 
 feature {NONE} -- Initialization
 
 	make_and_launch
 			-- Initialize and launch application
 		do
+			-- Prepare the first window to be displayed.
+			-- Perform one call to first window in order to
+			-- avoid to violate the invariant of class EV_APPLICATION.
+			create first_window
+
 			default_create
 			prepare
 			launch
 		end
 
 	prepare
-			-- Prepare the first window to be displayed.
-			-- Perform one call to first window in order to
-			-- avoid to violate the invariant of class EV_APPLICATION.
 		do
-				-- create and initialize the first window.
-			create first_window
-
 				-- Show the first window.
-				--| TODO: Remove this line if you don't want the first 
+				--| TODO: Remove this line if you don't want the first
 				--|       window to be shown at the start of the program.
 			first_window.show
 		end
@@ -41,5 +40,5 @@ feature {NONE} -- Implementation
 
 	first_window: MAIN_WINDOW
 			-- Main window.
-	
+
 end -- class APPLICATION
