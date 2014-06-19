@@ -9,8 +9,14 @@ class
 
 inherit
 	PERSON
+		redefine
+			default_age
+	end
+
+feature
+	default_age : INTEGER = 21
 
 create
 	withName
-	
+
 end
