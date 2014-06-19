@@ -18,7 +18,7 @@ feature -- Test routines
 	expectedFail_os_double_retail
 			-- Tries to create 2 retail versions for the same OS
 		note
-			testing: "USERSTORY", "EXPECTED_FAIL"
+			testing: "EXPECTED_FAIL"
 		local
 			retail: RETAIL
 		do
@@ -28,7 +28,7 @@ feature -- Test routines
 	expectedFail_VersionPriceForUser
 			-- Tries to get a version-price of a beta-version for a default-user
 		note
-			testing: "USERSTORY", "EXPECTED_FAIL"
+			testing: "EXPECTED_FAIL"
 		local
 			os : OPERATINGSYSTEM
 			version : VERSION
@@ -42,7 +42,7 @@ feature -- Test routines
 	expectedFail_Age_Precondition_Not_That_Strong
 			-- ..
 		note
-			testing: "USERSTORY", "EXPECTED_FAIL"
+			testing: "EXPECTED_FAIL"
 		local
 			person : PERSON
 		do

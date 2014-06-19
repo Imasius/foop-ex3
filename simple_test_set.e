@@ -18,7 +18,7 @@ feature -- Test routines
 	company_name_test
 			-- New test routine
 		note
-			testing:  "SIMPLE"
+			testing:  "EXPECTED_SUCCESS"
 		local
 			company: COMPANY
 		do
