@@ -10,4 +10,7 @@ class
 inherit
 	PERSON
 
+create
+	withName
+	
 end

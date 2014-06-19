@@ -7,6 +7,11 @@ note
 deferred class
 	VERSION
 
+feature
+
+	nr: INTEGER
+	-- The number of the version
+
 feature {NONE}
 
 	withOperatingSystem(system: OPERATINGSYSTEM)
