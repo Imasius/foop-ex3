@@ -21,11 +21,17 @@ feature {NONE} -- Initialization
 feature {NONE} -- private variables
 
 	p_age : INTEGER
+	p_default_age : INTEGER = 18
 
 feature
 
 	name: STRING
-	default_age : INTEGER = 18
+	default_age : INTEGER
+	do
+		Result := p_default_age
+	end
+
+
 
 	age : INTEGER
 	do

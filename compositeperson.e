@@ -20,7 +20,7 @@ feature
 
 	roles: LINKED_LIST [PERSON]
 
-feature {NULL}
+feature {NONE}
 
 	withName(personName: STRING)
 	do

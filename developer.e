@@ -13,10 +13,11 @@ inherit
 			default_age
 	end
 
+create
+	withName
+	
 feature
 	default_age : INTEGER = 21
 
-create
-	withName
 
 end
