@@ -9,5 +9,8 @@ class
 
 inherit
 	VERSION
+
+create
+	withOperatingSystem
 	
 end

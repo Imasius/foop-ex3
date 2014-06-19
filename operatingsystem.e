@@ -28,10 +28,29 @@ feature {NONE} -- Initialization
 	do
 		name := systemName
 		create versions.make
+		retailCreated := false
 	end
 
+feature {VERSION} -- Version functionality
+
+	addVersion(version: VERSION)
+	do
+		versions.extend (version)
+	end
+
+feature {RETAIL}
+
+	retailCreated: BOOLEAN
+		-- Denotes if there is a retail version for this operating system
+
+	createRetail
+	require
+		not retailCreated
+	do
+		retailCreated := true
+	end
 
 invariant
 	name /= Void
-	
+
 end
