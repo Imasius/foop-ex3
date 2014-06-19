@@ -1,0 +1,16 @@
+
+mouse_race_management: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+COMPANY             withname @1                                         
+<0000000003C5C9C8>                         Precondition violated.        Fail
+-------------------------------------------------------------------------------
+APPLICATION         make @3                                             
+<0000000003C5C5E8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+APPLICATION         root's creation                                     
+<0000000003C5C5E8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
