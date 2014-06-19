@@ -15,31 +15,39 @@ inherit
 
 feature -- Test routines
 
-	os_double_retail
+	expectedFail_os_double_retail
 			-- Tries to create 2 retail versions for the same OS
 		note
-			testing: "USERSTORY"
+			testing: "USERSTORY", "EXPECTED_FAIL"
 		local
-			system: OPERATINGSYSTEM
-			retail1: RETAIL
-			retail2: RETAIL
-			ex: BOOLEAN
-			failure: BOOLEAN
+			retail: RETAIL
 		do
+				create retail.withOsAndNr (os1, 1)
+		end
 
-			if not ex then
-				create system.withname ("MyOS")
-				create retail1.withoperatingsystem (system)
+	expectedFail_VersionPriceForUser
+			-- Tries to get a version-price of a beta-version for a default-user
+		note
+			testing: "USERSTORY", "EXPECTED_FAIL"
+		local
+			os : OPERATINGSYSTEM
+			version : VERSION
+			price : Real
+		do
+			os := company.osfromname ("Linux")
+			version := os.versionfromnr (1)
+			price := version.pricefor (user1)
+		end
 
-				create retail2.withoperatingsystem (system)
-				failure := true
-				assert("Should not be reached.", false)
-			end
-		rescue
-			if not failure then
-				ex := true
-				retry
-			end
+	expectedFail_Age_Precondition_Not_That_Strong
+			-- ..
+		note
+			testing: "USERSTORY", "EXPECTED_FAIL"
+		local
+			person : PERSON
+		do
+			person := dev1;
+			person.setage (19)
 		end
 
 end

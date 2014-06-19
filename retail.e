@@ -10,17 +10,18 @@ class
 inherit
 	VERSION
 		redefine
-			withOperatingSystem,
+			withOsAndNr,
 			priceFor
 		end
 
 create
-	withOperatingSystem
+	withOsAndNr
 
-feature {NULL}
+feature {NONE}
 
-	withOperatingSystem(system: OPERATINGSYSTEM)
+	withOsAndNr(system: OPERATINGSYSTEM; new_nr: INTEGER)
 	do
+		nr := new_nr
 		operatingSystem := system
 		system.createRetail
 		system.addVersion (Current)

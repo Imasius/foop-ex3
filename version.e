@@ -14,9 +14,13 @@ feature
 
 feature {NONE}
 
-	withOperatingSystem(system: OPERATINGSYSTEM)
+	withOsAndNr(system: OPERATINGSYSTEM; new_nr: INTEGER)
+	require
+		system /= VOID
+		new_nr > 0
 	do
 		operatingSystem := system
+		nr := new_nr
 		system.addVersion (Current)
 	end
 

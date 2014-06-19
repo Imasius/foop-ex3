@@ -25,34 +25,6 @@ feature -- Test routines
 			create company.withname ("Test Company")
 			assert ("Compnay has wrong name", company.name.is_equal ("Test Company"))
 		end
-
-	retail_double_insert_test
-			-- Tries to create 2 retail versions for the same OS
-		note
-			testing: "SIMPLE"
-		local
-			system: OPERATINGSYSTEM
-			retail1: RETAIL
-			retail2: RETAIL
-			ex: BOOLEAN
-			failure: BOOLEAN
-		do
-
-			if not ex then
-				create system.withname ("MyOS")
-				create retail1.withoperatingsystem (system)
-
-				create retail2.withoperatingsystem (system)
-				failure := true
-				assert("Should not be reached.", false)
-			end
-		rescue
-			if not failure then
-				ex := true
-				retry
-			end
-		end
-
 end
 
 

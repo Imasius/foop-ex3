@@ -14,7 +14,7 @@ inherit
 	end
 
 create
-	withOperatingSystem
+	withOsAndNr
 
 
 feature -- buying methods
