@@ -30,9 +30,56 @@ feature {NONE} -- Initialization
 		create products.make
 	end
 
+feature -- Access operating system
+
+	osFromName(osName : STRING) : OPERATINGSYSTEM
+	require
+		hasOsName(osName)
+	local
+		found : OPERATINGSYSTEM
+	do
+		found := products.first
+
+		from
+			products.start
+		until
+			products.exhausted
+		loop
+			if products.item.name = osName then
+				found := products.item
+			end
+		end
+
+		Result := found
+	ensure
+		Result /= VOID
+	end
+
+	hasOsName(osName : STRING) : BOOLEAN
+	require
+		osName /= VOID
+		NOT osName.is_empty
+	local
+		found : BOOLEAN
+	do
+		found := FALSE
+
+		from
+			products.start
+		until
+			products.exhausted or found
+		loop
+			if products.item.name = osName then
+				found := true
+			end
+		end
+
+		Result := found
+	end
+
 
 invariant
 	name /= Void
 	products /= Void
-	
+
 end

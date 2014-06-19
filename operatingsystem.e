@@ -38,6 +38,52 @@ feature {VERSION} -- Version functionality
 		versions.extend (version)
 	end
 
+feature -- Access versions
+
+	versionFromNr(nr : INTEGER) : VERSION
+	require
+		hasVersionNr(nr)
+	local
+		found : VERSION
+	do
+		found := versions.first
+
+		from
+			versions.start
+		until
+			versions.exhausted
+		loop
+			if versions.item.nr = nr then
+				found := versions.item
+			end
+		end
+
+		Result := found
+	ensure
+		Result /= VOID
+	end
+
+	hasVersionNr(nr : INTEGER) : BOOLEAN
+	require
+		nr > 0
+	local
+		found : BOOLEAN
+	do
+		found := FALSE
+
+		from
+			versions.start
+		until
+			versions.exhausted or found
+		loop
+			if versions.item.nr = nr then
+				found := true
+			end
+		end
+
+		Result := found
+	end
+
 feature {RETAIL}
 
 	retailCreated: BOOLEAN
@@ -52,5 +98,6 @@ feature {RETAIL}
 
 invariant
 	name /= Void
+	versions /= Void
 
 end
