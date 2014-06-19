@@ -7,10 +7,16 @@ note
 class
 	OPERATINGSYSTEM
 
+create
+	withName
+
 feature -- Member variables
 
 	name: STRING
 		-- Name of the operating system
+
+	versions: LINKED_LIST [VERSION]
+		-- Multiple versions. Only one retail.
 
 feature {NONE} -- Initialization
 
@@ -21,10 +27,11 @@ feature {NONE} -- Initialization
 		not systemName.is_empty
 	do
 		name := systemName
+		create versions.make
 	end
 
 
 invariant
 	name /= Void
-
+	
 end
