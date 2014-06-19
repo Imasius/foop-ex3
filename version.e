@@ -25,4 +25,12 @@ feature {RETAIL}
 	operatingSystem: OPERATINGSYSTEM
 		-- The operating system this version is attached too
 
+feature -- buying methods
+
+	priceFor(person : PERSON) : Real
+	require
+		person /= VOID
+	deferred
+	end
+
 end

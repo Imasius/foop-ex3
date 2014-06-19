@@ -9,8 +9,18 @@ class
 
 inherit
 	VERSION
+		redefine
+			priceFor
+	end
 
 create
 	withOperatingSystem
-	
+
+
+feature -- buying methods
+
+	priceFor(person : DEVELOPER) : Real
+	do
+		Result := 5
+	end
 end
