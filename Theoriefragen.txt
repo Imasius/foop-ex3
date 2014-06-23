@@ -9,6 +9,7 @@ https://docs.eiffel.com/book/method/et-design-contract-tm-assertions-and-excepti
 Idee: Als Zusicherung Methode aufrufen die ein Schleife sehr oft durchläuft.
 
 3) Vorbedingungen dürfen im Untertyp nicht stärker und Nachbedingungen nicht schwächer werden um Ersetzbarkeit zu garantieren. Der Eiffel-Compiler überprüft diese Bedingungen. Ist es (trotz eingeschalteter Überprüfung von Zusicherungen) möglich, diese Bedingungen zu umgehen? Wenn ja, wie?
+
 Werden konstanten für Zusicherungen verwendet ist es möglich, im Untertyp den Wert dieser Konstante zu ändern wodurch die Zusicherung ausgehebelt werden kann.
 
 4) Eiffel erlaubt kovariante Eingangsparametertypen. Unter welchen Bedingungen führt das zu Problemen, und wie äußern sich diese? Können Sie ein Programm schreiben, in dem die Verwendung kovarianter Eingangsparametertypen zu einer Exception führt?
@@ -18,4 +19,3 @@ TODO: CatCalls beschreiben
 5) Vereinfachen kovariante Eingangsparametertypen die Programmierung? Unter welchen Bedingungen ist das so?
 Welche Spracheigenschaften von Eiffel finden Sie interessant und würden Sie gerne auch in anderen Sprachen sehen? Welche Eigenschaften von Eiffel empfinden Sie dagegen als störend?
 
-Todo:
